@@ -70,11 +70,12 @@ text-align: center;
 }
 
 img {
-max-width: 400px;
-width: 100%;
+width: 400px;
+max-width: 100%;
 height: auto;
 border: 3px solid #50c878;
 border-radius: 10px;
+box-sizing: border-box;
 }
 
 figcaption {
