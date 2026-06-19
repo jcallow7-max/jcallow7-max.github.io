@@ -17,11 +17,75 @@
 
 <main>
 
-    <h2>Survey</h2>
+    <h2>Jazzy Cougar Creative Tech Hub Survey</h2>
 
     <p>
-        Content coming soon.
+        This survey is for visitors interested in joining the Jazzy Cougar Creative Tech Hub, a themed space for coding,
+        music production, fitness motivation, and creative technology projects.
     </p>
+
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Basic Information</legend>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="age-range">Age Range:</label>
+            <select id="age-range" name="age-range" required>
+                <option value="">Select one</option>
+                <option value="under-18">Under 18</option>
+                <option value="18-24">18-24</option>
+                <option value="25-34">25-34</option>
+                <option value="35-plus">35+</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Creative Interests</legend>
+
+            <p>Which areas interest you?</p>
+
+            <input type="checkbox" id="coding" name="interests" value="coding">
+            <label for="coding">Coding and web design</label>
+
+            <input type="checkbox" id="music" name="interests" value="music">
+            <label for="music">Music production</label>
+
+            <input type="checkbox" id="fitness" name="interests" value="fitness">
+            <label for="fitness">Fitness and discipline</label>
+
+            <input type="checkbox" id="business" name="interests" value="business">
+            <label for="business">Tech business ideas</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Hub Experience</legend>
+
+            <p>Which area would you visit first?</p>
+
+            <input type="radio" id="code-lab" name="first-area" value="code-lab" required>
+            <label for="code-lab">Code Lab</label>
+
+            <input type="radio" id="studio" name="first-area" value="studio">
+            <label for="studio">Music Studio</label>
+
+            <input type="radio" id="training-zone" name="first-area" value="training-zone">
+            <label for="training-zone">Training Zone</label>
+
+            <input type="radio" id="startup-corner" name="first-area" value="startup-corner">
+            <label for="startup-corner">Startup Corner</label>
+
+            <label for="comments">What would you want the hub to include?</label>
+            <textarea id="comments" name="comments" rows="5" placeholder="Share your ideas here"></textarea>
+        </fieldset>
+
+        <input type="submit" value="Submit Survey">
+        <input type="reset" value="Reset Form">
+    </form>
 
 </main>
 

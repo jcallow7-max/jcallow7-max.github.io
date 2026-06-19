@@ -51,7 +51,6 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Fixes blue links in Website Evaluations */
 main a,
 main a:visited {
     color: #98fb98;
@@ -114,4 +113,98 @@ ul li {
 p,
 li {
     color: #f5f5f5;
+}
+
+fieldset {
+    border: 2px solid #2e8b57;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+legend {
+    color: #98fb98;
+    font-weight: bold;
+}
+
+label {
+    color: #f5f5f5;
+}
+
+input,
+select,
+textarea {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #50c878;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    color: #0f2419;
+}
+
+input[type="submit"],
+input[type="reset"],
+button {
+    background-color: #2e8b57;
+    color: #f5f5f5;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover {
+    background-color: #50c878;
+    color: #0f2419;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    border: 1px solid #50c878;
+    padding: 10px;
+    color: #f5f5f5;
+}
+
+th {
+    background-color: #2e8b57;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 850px;
+    margin: 30px auto;
+}
+
+.card {
+    border: 3px solid #50c878;
+    border-radius: 15px;
+    min-height: 350px;
+    padding: 20px;
+    background-color: #163322;
+}
+
+.product-box,
+.info-box {
+    border: 2px solid #2e8b57;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #163322;
+}
+
+code,
+pre {
+    background-color: #163322;
+    color: #98fb98;
+    border: 1px solid #2e8b57;
+    padding: 5px;
 }
