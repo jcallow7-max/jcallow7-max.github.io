@@ -8,60 +8,6 @@
 
     <link rel="stylesheet" href="styles/default.css">
 
-    <style>
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            max-width: 850px;
-            margin: 30px auto;
-        }
-
-        .playing-card {
-            border: 3px solid #50c878;
-            border-radius: 15px;
-            height: 450px;
-            position: relative;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .card-top {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #98fb98;
-        }
-
-        .card-bottom {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #98fb98;
-        }
-
-        .card-center {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .card-center h3 {
-            color: #7ed957;
-            margin-bottom: 25px;
-        }
-
-        .card-center p {
-            font-size: 1.2rem;
-        }
-    </style>
-
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 
@@ -74,56 +20,44 @@
     <h2>Jazzy Cougar Skill Cards</h2>
 
     <p>
-        These cards represent some of the skills, interests, and activities that make up the Jazzy Cougar Tech Hub.
+        These custom playing cards represent the main skills and interests inside the Jazzy Cougar Creative Tech Hub.
     </p>
 
-    <div class="card-grid">
+    <section>
+        <h3>Creative Tech Deck</h3>
 
-        <div class="playing-card">
-            <div class="card-top">A</div>
+        <div class="card-container">
 
-            <div class="card-center">
+            <div class="card">
+                <p class="card-rank-top">A</p>
                 <h3>Web Development</h3>
                 <p>Create websites, applications, and digital experiences.</p>
+                <p class="card-rank-bottom">A</p>
             </div>
 
-            <div class="card-bottom">A</div>
-        </div>
-
-        <div class="playing-card">
-            <div class="card-top">K</div>
-
-            <div class="card-center">
+            <div class="card">
+                <p class="card-rank-top">K</p>
                 <h3>Music Production</h3>
                 <p>Produce beats, mix audio, and create original music.</p>
+                <p class="card-rank-bottom">K</p>
             </div>
 
-            <div class="card-bottom">K</div>
-        </div>
-
-        <div class="playing-card">
-            <div class="card-top">Q</div>
-
-            <div class="card-center">
+            <div class="card">
+                <p class="card-rank-top">Q</p>
                 <h3>Computer Repair</h3>
                 <p>Upgrade, refurbish, and troubleshoot computer hardware.</p>
+                <p class="card-rank-bottom">Q</p>
             </div>
 
-            <div class="card-bottom">Q</div>
-        </div>
-
-        <div class="playing-card">
-            <div class="card-top">J</div>
-
-            <div class="card-center">
-                <h3>Fitness & Discipline</h3>
+            <div class="card">
+                <p class="card-rank-top">J</p>
+                <h3>Fitness and Discipline</h3>
                 <p>Build consistency, strength, and long-term habits.</p>
+                <p class="card-rank-bottom">J</p>
             </div>
 
-            <div class="card-bottom">J</div>
         </div>
-
-    </div>
+    </section>
 
 </main>
 
