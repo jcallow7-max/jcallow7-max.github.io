@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITIS3135 | Jackson Calloway's Jazzy Cougar | Everything Pictures</title>
+    <link rel="stylesheet" href="styles/default.css">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<div data-include="components/header.html"></div>
+
+<main>
+    <h2>Everything Pictures</h2>
+
+    <p>
+        This page demonstrates how images behave in digital environments. It shows
+        how file formats, image dimensions, file size, proportional resizing,
+        improper distortion, and enlargement affect the way images appear on a web page.
+    </p>
+
+    <section>
+        <h3>Demonstrating Image Manipulation with a Pexels Cat Photo</h3>
+
+        <p>
+            I chose this Pexels image because it has clear detail in the cat's fur,
+            eyes, whiskers, and background fabric. The image is titled
+            "Peaceful White and Gray Cat Resting Outdoors" and was photographed by
+            Engin Akyurt. The original JPG image is 2048 by 1536 pixels.
+        </p>
+
+        <figure>
+            <img src="images3135/peaceful-white-and-gray-cat-resting-outdoors-31035697@engin-akyurt_pexels-600x450.jpg"
+                 alt="White and gray cat resting outdoors"
+                 width="600" height="450">
+            <figcaption>A properly reduced version of the Pexels cat image.</figcaption>
+        </figure>
+
+        <article>
+            <h4>Original Image</h4>
+            <p>Click to open the image in each format:</p>
+            <p>
+                <a href="images3135/pexels-enginakyurt-31035697.jpg" target="_blank" rel="noopener">Original JPG</a> |
+                <a href="images3135/peaceful-white-and-gray-cat-resting-outdoors-31035697@engin-akyurt_pexels.gif" target="_blank" rel="noopener">GIF</a> |
+                <a href="images3135/peaceful-white-and-gray-cat-resting-outdoors-31035697@engin-akyurt_pexels-greyscale.jpg" target="_blank" rel="noopener">Greyscale JPG</a> |
+                <a href="images3135/peaceful-white-and-gray-cat-resting-outdoors-31035697@engin-akyurt_pexels-blackwhite.jpg" target="_blank" rel="noopener">Black and White JPG</a>
+            </p>
+        </article>
+
+        <article>
+            <h4>Downsizing Images with CSS</h4>
+            <p>
+                This example displays the cat image smaller with inline CSS while preserving proportions.
+            </p>
+
+            <figure>
+                <img src="images3135/peaceful-white-and-gray-cat-resting-outdoors-31035697@engin-akyurt_pexels-600x450.jpg"
+                     alt="White and gray cat resized with CSS"
+                     width="300" height="225"
+                     style="width: 300px; height: auto;">
+                <figcaption>The image displayed at 300 pixels wide using CSS.</figcaption>
+            </figure>
+        </article>
+
+        <article>
+            <h4>Proper Reduction of Image with Editor</h4>
+            <p>
+                This image was resized in an image editor before being placed on
+                the page. The image file itself is smaller, and the proportions remain correct.
+            </p>
+
+            <figure>
+                <img src="images3135/peaceful-white-and-gray-cat-resting-outdoors-31035697@engin-akyurt_pexels-600x450.jpg"
+                     alt="Properly reduced white and gray cat"
+                     width="600" height="450">
+                <figcaption>The edited 600 by 450 pixel version keeps the original proportions.</figcaption>
+            </figure>
+        </article>
+
+        <article>
+            <h4>Improper Image Proportions with CSS</h4>
+            <p>
+                These examples intentionally distort the properly reduced image by
+                changing one dimension while keeping the other dimension fixed.
+            </p>
+
+            <figure>
+                <img src="images3135/peaceful-white-and-gray-cat-resting-outdoors-31035697@engin-akyurt_pexels-600x450.jpg"
+                     alt="Cat image squeezed horizontally"
+                     width="402" height="450"
+                     style="width: 402px; height: 450px;">
+                <figcaption>Width reduced by about 33 percent while height stays 450 pixels.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images3135/peaceful-white-and-gray-cat-resting-outdoors-31035697@engin-akyurt_pexels-600x450.jpg"
+                     alt="Cat image squeezed more horizontally"
+                     width="269" height="450"
+                     style="width: 269px; height: 450px;">
+                <figcaption>Width reduced again by about 33 percent while height stays 450 pixels.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images3135/peaceful-white-and-gray-cat-resting-outdoors-31035697@engin-akyurt_pexels-600x450.jpg"
+                     alt="Cat image squeezed vertically"
+                     width="600" height="302"
+                     style="width: 600px; height: 302px;">
+                <figcaption>Height reduced by about 33 percent while width stays 600 pixels.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images3135/peaceful-white-and-gray-cat-resting-outdoors-31035697@engin-akyurt_pexels-600x450.jpg"
+                     alt="Cat image squeezed more vertically"
+                     width="600" height="202"
+                     style="width: 600px; height: 202px;">
+                <figcaption>Height reduced again by about 33 percent while width stays 600 pixels.</figcaption>
+            </figure>
+        </article>
+
+        <article>
+            <h4>Improper Enlarging with CSS</h4>
+            <p>
+                These two images are displayed at the same size, but the second image
+                started as a much smaller file. Enlarging the smaller file causes visible quality loss.
+            </p>
+
+            <figure>
+                <img src="images3135/peaceful-white-and-gray-cat-resting-outdoors-31035697@engin-akyurt_pexels-600x450.jpg"
+                     alt="Cat image from properly resized file"
+                     width="600" height="450">
+                <figcaption>The 600 by 450 image displayed at its natural size.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images3135/peaceful-white-and-gray-cat-resting-outdoors-31035697@engin-akyurt_pexels-150x113.jpg"
+                     alt="Tiny cat image enlarged with CSS"
+                     width="600" height="450"
+                     style="width: 600px; height: 450px;">
+                <figcaption>The 150 by 113 image enlarged to 600 by 450 pixels.</figcaption>
+            </figure>
+        </article>
+    </section>
+
+    <hr>
+
+    <section>
+        <h3>Demonstrating Image Manipulation with a Personal Geometry Photo</h3>
+
+        <p>
+            I took this photo to demonstrate image proportions using a round object.
+            The image shows my hand holding a round Blistex lip balm cap. I chose
+            this because the cap should remain circular when the image is displayed
+            correctly. The original JPG image is 1536 by 2048 pixels.
+        </p>
+
+        <figure>
+            <img src="images3135/blistex-in-hand@jackson-calloway-600x800.jpg"
+                 alt="Hand holding a round Blistex lip balm cap"
+                 width="600" height="800">
+            <figcaption>A properly reduced version of my personal geometry image.</figcaption>
+        </figure>
+
+        <article>
+            <h4>Original Image</h4>
+            <p>Click to open the image in each format:</p>
+            <p>
+                <a href="images3135/blistex-in-hand@jackson-calloway.jpg" target="_blank" rel="noopener">Original JPG</a> |
+                <a href="images3135/blistex-in-hand@jackson-calloway.gif" target="_blank" rel="noopener">GIF</a> |
+                <a href="images3135/blistex-in-hand@jackson-calloway-greyscale.jpg" target="_blank" rel="noopener">Greyscale JPG</a> |
+                <a href="images3135/blistex-in-hand@jackson-calloway-blackwhite.jpg" target="_blank" rel="noopener">Black and White JPG</a>
+            </p>
+        </article>
+
+        <article>
+            <h4>Downsizing Images with CSS</h4>
+            <p>
+                This example displays the personal image smaller with inline CSS while preserving proportions.
+            </p>
+
+            <figure>
+                <img src="images3135/blistex-in-hand@jackson-calloway-600x800.jpg"
+                     alt="Hand holding Blistex resized with CSS"
+                     width="300" height="400"
+                     style="width: 300px; height: auto;">
+                <figcaption>The personal image displayed at 300 pixels wide using CSS.</figcaption>
+            </figure>
+        </article>
+
+        <article>
+            <h4>Proper Reduction of Image with Editor</h4>
+            <p>
+                This image was resized in an image editor before being placed on
+                the page. The image file is smaller, and the Blistex cap remains circular.
+            </p>
+
+            <figure>
+                <img src="images3135/blistex-in-hand@jackson-calloway-600x800.jpg"
+                     alt="Properly reduced personal geometry photo"
+                     width="600" height="800">
+                <figcaption>The edited 600 by 800 pixel version keeps the original proportions.</figcaption>
+            </figure>
+        </article>
+
+        <article>
+            <h4>Improper Image Proportions with CSS</h4>
+            <p>
+                These examples intentionally distort the properly reduced image by
+                changing one dimension while keeping the other dimension fixed.
+                The round Blistex cap makes the distortion easier to notice.
+            </p>
+
+            <figure>
+                <img src="images3135/blistex-in-hand@jackson-calloway-600x800.jpg"
+                     alt="Personal image squeezed horizontally"
+                     width="402" height="800"
+                     style="width: 402px; height: 800px;">
+                <figcaption>Width reduced by about 33 percent while height stays 800 pixels.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images3135/blistex-in-hand@jackson-calloway-600x800.jpg"
+                     alt="Personal image squeezed more horizontally"
+                     width="269" height="800"
+                     style="width: 269px; height: 800px;">
+                <figcaption>Width reduced again by about 33 percent while height stays 800 pixels.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images3135/blistex-in-hand@jackson-calloway-600x800.jpg"
+                     alt="Personal image squeezed vertically"
+                     width="600" height="536"
+                     style="width: 600px; height: 536px;">
+                <figcaption>Height reduced by about 33 percent while width stays 600 pixels.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images3135/blistex-in-hand@jackson-calloway-600x800.jpg"
+                     alt="Personal image squeezed more vertically"
+                     width="600" height="359"
+                     style="width: 600px; height: 359px;">
+                <figcaption>Height reduced again by about 33 percent while width stays 600 pixels.</figcaption>
+            </figure>
+        </article>
+
+        <article>
+            <h4>Improper Enlarging with CSS</h4>
+            <p>
+                These two images are displayed at the same size, but the second image
+                started as a much smaller file. Enlarging the smaller file makes it lower quality.
+            </p>
+
+            <figure>
+                <img src="images3135/blistex-in-hand@jackson-calloway-600x800.jpg"
+                     alt="Personal geometry photo from properly resized file"
+                     width="600" height="800">
+                <figcaption>The 600 by 800 image displayed at its natural size.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images3135/blistex-in-hand@jackson-calloway-150x200.jpg"
+                     alt="Tiny personal geometry photo enlarged with CSS"
+                     width="600" height="800"
+                     style="width: 600px; height: 800px;">
+                <figcaption>The 150 by 200 image enlarged to 600 by 800 pixels.</figcaption>
+            </figure>
+        </article>
+    </section>
+
+</main>
+
+<div data-include="components/footer.html"></div>
+<script src="scripts/HTMLInclude.min.js"></script>
+
+</body>
+</html>
