@@ -299,3 +299,58 @@ pre {
         margin: 6px auto;
     }
 }
+
+.image-display-small {
+    width: 300px;
+    height: auto;
+}
+
+.cat-squeeze-horizontal-one {
+    width: 402px;
+    height: 450px;
+}
+
+.cat-squeeze-horizontal-two {
+    width: 269px;
+    height: 450px;
+}
+
+.cat-squeeze-vertical-one {
+    width: 600px;
+    height: 302px;
+}
+
+.cat-squeeze-vertical-two {
+    width: 600px;
+    height: 202px;
+}
+
+.cat-enlarged {
+    width: 600px;
+    height: 450px;
+}
+
+.personal-squeeze-horizontal-one {
+    width: 402px;
+    height: 800px;
+}
+
+.personal-squeeze-horizontal-two {
+    width: 269px;
+    height: 800px;
+}
+
+.personal-squeeze-vertical-one {
+    width: 600px;
+    height: 536px;
+}
+
+.personal-squeeze-vertical-two {
+    width: 600px;
+    height: 359px;
+}
+
+.personal-enlarged {
+    width: 600px;
+    height: 800px;
+}
