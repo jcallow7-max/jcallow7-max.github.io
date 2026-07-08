@@ -1,99 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITIS3135 | Jackson Calloway's Jazzy Cougar | Survey</title>
-
-    <link rel="icon" href="images3135/bld.png" type="image/png">
-<link rel="stylesheet" href="styles/default.css">
-
+    <title>Jackson Calloway's Jazzy Cougar | Jazzy Cougar Creative Tech Hub Survey</title>
+    <link rel="icon" href="images/baldi.png" type="image/png">
+    <link rel="stylesheet" href="styles/default.css">
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <header>
+        <h1 class="site-title">
+            <img class="header-image" src="images/bld.png" alt="Jackson Calloway">
+            Jackson Calloway's Jazzy Cougar
+        </h1>
 
-<div data-include="components/header.html"></div>
+        <p><em>ITIS 3135 Course Site</em></p>
 
-<main>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="contract.html">Contract</a> |
+            <a href="survey.html">Survey</a> |
+            <a href="cards.html">Cards</a> |
+            <a href="inventory.html">Inventory</a> |
+            <a href="documentation.html">Documentation</a> |
+            <a href="product.html">Product</a> |
+            <a href="gallery.html">Gallery</a> |
+            <a href="instructions.html">Instructions</a> |
+            <a href="highlight.html">Highlight</a> |
+            <a href="introduction.html">Introduction</a> |
+            <a href="about.html">About</a> |
+            <a href="website_evaluations.html">Website Evaluations</a> |
+            <a href="introduction_form.html">Introduction Form</a>
+        </nav>
 
-    <h2>Jazzy Cougar Creative Tech Hub Survey</h2>
+        <nav class="secondary-nav">
+            <a href="stuff/the-upstairs-news.html">CRAPpy Page</a> |
+            <a href="hobby/index.html">Hobby</a>
+        </nav>
+    </header>
 
-    <p>
-        This survey is for visitors interested in joining the Jazzy Cougar Creative Tech Hub, a themed space for coding,
-        music production, fitness motivation, and creative technology projects.
-    </p>
+    <main>
+        <h2>Jazzy Cougar Creative Tech Hub Survey</h2>
 
-    <form action="#" method="post">
-        <fieldset>
-            <legend>Basic Information</legend>
+        <p>
+            This survey is for visitors interested in joining the Jazzy Cougar
+            Creative Tech Hub, a themed space for coding, music production,
+            fitness motivation, and creative technology projects.
+        </p>
 
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Basic Information</legend>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"
+                       placeholder="Enter your name" required>
 
-            <label for="age-range">Age Range:</label>
-            <select id="age-range" name="age-range" required>
-                <option value="">Select one</option>
-                <option value="under-18">Under 18</option>
-                <option value="18-24">18-24</option>
-                <option value="25-34">25-34</option>
-                <option value="35-plus">35+</option>
-            </select>
-        </fieldset>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Enter your email" required>
 
-        <fieldset>
-            <legend>Creative Interests</legend>
+                <label for="age-range">Age Range:</label>
+                <select id="age-range" name="age-range" required>
+                    <option value="">Select one</option>
+                    <option value="under-18">Under 18</option>
+                    <option value="18-24">18-24</option>
+                    <option value="25-34">25-34</option>
+                    <option value="35-plus">35+</option>
+                </select>
+            </fieldset>
 
-            <p>Which areas interest you?</p>
+            <fieldset>
+                <legend>Creative Interests</legend>
 
-            <input type="checkbox" id="coding" name="interests" value="coding">
-            <label for="coding">Coding and web design</label>
+                <p>Which areas interest you?</p>
 
-            <input type="checkbox" id="music" name="interests" value="music">
-            <label for="music">Music production</label>
+                <input type="checkbox" id="coding"
+                       name="interests" value="coding">
+                <label for="coding">Coding and web design</label>
 
-            <input type="checkbox" id="fitness" name="interests" value="fitness">
-            <label for="fitness">Fitness and discipline</label>
+                <input type="checkbox" id="music"
+                       name="interests" value="music">
+                <label for="music">Music production</label>
 
-            <input type="checkbox" id="business" name="interests" value="business">
-            <label for="business">Tech business ideas</label>
-        </fieldset>
+                <input type="checkbox" id="fitness"
+                       name="interests" value="fitness">
+                <label for="fitness">Fitness and discipline</label>
 
-        <fieldset>
-            <legend>Hub Experience</legend>
+                <input type="checkbox" id="business"
+                       name="interests" value="business">
+                <label for="business">Tech business ideas</label>
+            </fieldset>
 
-            <p>Which area would you visit first?</p>
+            <fieldset>
+                <legend>Hub Experience</legend>
 
-            <input type="radio" id="code-lab" name="first-area" value="code-lab" required>
-            <label for="code-lab">Code Lab</label>
+                <p>Which area would you visit first?</p>
 
-            <input type="radio" id="studio" name="first-area" value="studio">
-            <label for="studio">Music Studio</label>
+                <input type="radio" id="code-lab"
+                       name="first-area" value="code-lab" required>
+                <label for="code-lab">Code Lab</label>
 
-            <input type="radio" id="training-zone" name="first-area" value="training-zone">
-            <label for="training-zone">Training Zone</label>
+                <input type="radio" id="studio"
+                       name="first-area" value="studio">
+                <label for="studio">Music Studio</label>
 
-            <input type="radio" id="startup-corner" name="first-area" value="startup-corner">
-            <label for="startup-corner">Startup Corner</label>
+                <input type="radio" id="training-zone"
+                       name="first-area" value="training-zone">
+                <label for="training-zone">Training Zone</label>
 
-            <label for="comments">What would you want the hub to include?</label>
-            <textarea id="comments" name="comments" rows="5" placeholder="Share your ideas here"></textarea>
-        </fieldset>
+                <input type="radio" id="startup-corner"
+                       name="first-area" value="startup-corner">
+                <label for="startup-corner">Startup Corner</label>
 
-        <input type="submit" value="Submit Survey">
-        <input type="reset" value="Reset Form">
-    </form>
+                <label for="comments">
+                    What would you want the hub to include?
+                </label>
 
-</main>
+                <textarea id="comments"
+                          name="comments"
+                          rows="5"
+                          placeholder="Share your ideas here"></textarea>
+            </fieldset>
 
-<div data-include="components/footer.html"></div>
+            <input type="submit" value="Submit Survey">
+            <input type="reset" value="Reset Form">
+        </form>
+    </main>
 
-<script src="scripts/HTMLInclude.min.js"></script>
+    <div data-include="components/footer.html"></div>
 
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="https://divonbriesen.github.io/web123/scripts/standards-check.js" defer></script>
 </body>
-
 </html>

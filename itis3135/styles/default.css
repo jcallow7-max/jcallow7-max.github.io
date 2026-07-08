@@ -1,5 +1,5 @@
 body {
-    background-color: #14231b;
+    background-color: #14231b; /* Dark green background used for site theme instead of plain black. */
     color: #edf5ee;
     font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
     max-width: 1000px;
@@ -16,6 +16,22 @@ header {
     border-radius: 16px;
     color: #75d394;
     letter-spacing: 1px;
+}
+
+.site-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35em;
+}
+
+.header-image {
+    width: 1.25em;
+    height: 1.25em;
+    max-width: 1.25em;
+    object-fit: cover;
+    border: none;
+    border-radius: 50%;
 }
 
 h2 {
@@ -112,6 +128,15 @@ img {
     border-radius: 12px;
 }
 
+.card-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
 figcaption {
     font-style: italic;
     color: #c7d6ca;
@@ -148,6 +173,7 @@ textarea {
     border-radius: 5px;
     background-color: #e6efe8;
     color: #1d3024;
+    font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
 }
 
 input[type="submit"],
@@ -160,6 +186,7 @@ button {
     border: 1px solid #75d394;
     border-radius: 8px;
     padding: 8px 12px;
+    font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
 }
 
 input[type="submit"]:hover,
@@ -223,6 +250,7 @@ code {
     color: #a8e6b7;
     border: 1px solid #4f7f62;
     padding: 5px;
+    font-family: "Courier New", Courier, monospace;
 }
 
 pre {
@@ -230,6 +258,7 @@ pre {
     color: #a8e6b7;
     border: 1px solid #4f7f62;
     padding: 5px;
+    font-family: "Courier New", Courier, monospace;
 }
 
 .secondary-nav {
