@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jazzy Cougar | Locations</title>
+    <link rel="icon" href="images/JazzyCougar.png" type="image/png">
+    <link rel="stylesheet" href="styles/default.css">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- This div is required as the placeholder for the shared header component. -->
+    <div data-include="components/header.html"></div>
+
+    <main>
+        <h2>Locations</h2>
+
+        <section>
+            <h3>Find a Jazzy Cougar</h3>
+
+            <img
+                src="images/location.png"
+                alt="JC standing outside a Jazzy Cougar tobacco lounge at night">
+
+            <p>
+                Each Jazzy Cougar location combines the service of a specialty
+                tobacco shop with the comfort and atmosphere of a private lounge.
+                Guests can browse our collection, speak with knowledgeable staff,
+                or settle into a comfortable seat and take their time.
+            </p>
+
+            <p>
+                Select one of the three markers below to view that tobacco shop's
+                address, telephone number, and individual lounge features.
+            </p>
+        </section>
+
+        <!--
+            These classes and data attributes create the interactive map.
+            CSS positions the three shop markers, while JavaScript updates
+            the location information when a marker is selected.
+        -->
+        <section class="location-finder">
+            <h3>Our Tobacco Shops</h3>
+
+            <div class="location-map">
+                <button
+                    class="map-marker active"
+                    id="shop-one-marker"
+                    type="button"
+                    data-location="shop-one"
+                    aria-label="Select Tobacco Shop 1">
+                    <span>1</span>
+                </button>
+
+                <button
+                    class="map-marker"
+                    id="shop-two-marker"
+                    type="button"
+                    data-location="shop-two"
+                    aria-label="Select Tobacco Shop 2">
+                    <span>2</span>
+                </button>
+
+                <button
+                    class="map-marker"
+                    id="shop-three-marker"
+                    type="button"
+                    data-location="shop-three"
+                    aria-label="Select Tobacco Shop 3">
+                    <span>3</span>
+                </button>
+            </div>
+
+            <article class="location-details" aria-live="polite">
+                <h3 id="location-name">Jazzy Cougar Tobacco Shop 1</h3>
+
+                <p id="location-address">
+                    123 ABC Street
+                </p>
+
+                <p>
+                    <strong>Telephone:</strong>
+                    <span id="location-phone">(555) 123-1000</span>
+                </p>
+
+                <p id="location-description">
+                    Our flagship tobacco shop features rich mahogany interiors,
+                    attentive table service, and live jazz on select evenings.
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <!-- This div is required as the placeholder for the shared footer component. -->
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/locations.js"></script>
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="https://divonbriesen.github.io/web123/scripts/standards-check.js" defer></script>
+</body>
+</html>

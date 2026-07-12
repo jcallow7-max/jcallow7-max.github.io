@@ -1,0 +1,298 @@
+/* Jazzy Cougar uses a dark lounge palette without pure black or white. */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 92%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #241a14;
+    color: #e8d8b5;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header,
+footer {
+    margin: 24px 0;
+    padding: 22px;
+    background-color: #3a1718;
+    border: 2px solid #c49a44;
+    border-radius: 12px;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    margin: 0;
+    color: #c49a44;
+    font-family: Georgia, serif;
+}
+
+h2 {
+    padding-bottom: 8px;
+    color: #c49a44;
+    border-bottom: 2px solid #701f2b;
+    font-family: Georgia, serif;
+}
+
+h3 {
+    color: #bda77b;
+    font-family: Georgia, serif;
+}
+
+header p,
+footer p {
+    color: #bda77b;
+}
+
+nav {
+    margin-top: 14px;
+}
+
+a,
+a:visited {
+    color: #c49a44;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #e8d8b5;
+    text-decoration: underline;
+}
+
+main {
+    padding: 8px 0 28px;
+}
+
+section,
+article {
+    margin: 22px 0;
+    padding: 22px;
+    background-color: #174c3c;
+    border: 1px solid #c49a44;
+    border-radius: 10px;
+}
+
+p,
+li {
+    color: #e8d8b5;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: 22px auto;
+    border: 3px solid #c49a44;
+    border-radius: 10px;
+}
+
+.header-logo {
+    display: inline-block;
+    max-width: 1.2em;
+    max-height: 1.2em;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    object-fit: contain;
+}
+
+main img {
+    max-width: min(760px, 100%);
+}
+
+footer {
+    text-align: center;
+}
+
+/* These rules create the fictional interactive map on the Locations page. */
+
+.location-map {
+    position: relative;
+    min-block-size: 430px;
+    margin: 20px 0;
+    overflow: hidden;
+    background-color: #d3c39d;
+    background-image:
+        linear-gradient(
+            28deg,
+            transparent 43%,
+            #f2e8ce 43%,
+            #f2e8ce 47%,
+            #9b895f 47%,
+            #9b895f 48%,
+            #f2e8ce 48%,
+            #f2e8ce 52%,
+            transparent 52%
+        ),
+        linear-gradient(
+            102deg,
+            transparent 36%,
+            #f2e8ce 36%,
+            #f2e8ce 41%,
+            #9b895f 41%,
+            #9b895f 42%,
+            #f2e8ce 42%,
+            #f2e8ce 47%,
+            transparent 47%
+        ),
+        linear-gradient(
+            165deg,
+            transparent 55%,
+            #f2e8ce 55%,
+            #f2e8ce 59%,
+            #9b895f 59%,
+            #9b895f 60%,
+            #f2e8ce 60%,
+            #f2e8ce 64%,
+            transparent 64%
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 90px,
+            rgb(88 119 91 / 35%) 90px,
+            rgb(88 119 91 / 35%) 145px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 75px,
+            rgb(88 119 91 / 30%) 75px,
+            rgb(88 119 91 / 30%) 120px
+        );
+    border: 3px solid #c49a44;
+    border-radius: 12px;
+    box-shadow: inset 0 0 40px rgb(36 26 20 / 25%);
+}
+
+.location-map::before {
+    position: absolute;
+    inset: 18px;
+    content: "";
+    pointer-events: none;
+    border: 1px solid rgb(112 31 43 / 45%);
+    border-radius: 8px;
+}
+
+.location-map::after {
+    position: absolute;
+    right: 18px;
+    bottom: 14px;
+    padding: 5px 10px;
+    content: "Jazzy Cougar Shop Map";
+    color: #4a3525;
+    background-color: rgb(232 216 181 / 85%);
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.map-marker {
+    position: absolute;
+    z-index: 2;
+    padding: 10px 15px;
+    color: #e8d8b5;
+    background-color: #701f2b;
+    border: 3px solid #c49a44;
+    border-radius: 50%;
+    box-shadow: 0 4px 9px rgb(36 26 20 / 45%);
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.map-marker:hover,
+.map-marker:focus {
+    color: #241a14;
+    background-color: #e8d8b5;
+    transform: scale(1.12);
+}
+
+[aria-pressed="true"] {
+    color: #241a14;
+    background-color: #c49a44;
+    transform: scale(1.15);
+}
+
+#shop-one-marker {
+    top: 22%;
+    left: 25%;
+}
+
+#shop-two-marker {
+    top: 58%;
+    left: 48%;
+}
+
+#shop-three-marker {
+    top: 30%;
+    right: 20%;
+}
+
+.location-details {
+    margin-top: 20px;
+    background-color: #3a1718;
+    border-left: 7px solid #c49a44;
+}
+
+.location-details p:last-child {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        width: 95%;
+    }
+
+    header,
+    footer,
+    section,
+    article {
+        padding: 16px;
+    }
+
+    nav {
+        line-height: 2;
+    }
+
+    .location-map {
+        min-block-size: 330px;
+    }
+
+    .map-marker {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    #shop-one-marker {
+        top: 18%;
+        left: 15%;
+    }
+
+    #shop-two-marker {
+        top: 60%;
+        left: 43%;
+    }
+
+    #shop-three-marker {
+        top: 28%;
+        right: 12%;
+    }
+}

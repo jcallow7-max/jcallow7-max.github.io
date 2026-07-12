@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jazzy Cougar | Products</title>
+    <link rel="icon" href="images/JazzyCougar.png" type="image/png">
+    <link rel="stylesheet" href="styles/default.css">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- This div is required as the placeholder for the shared header component. -->
+    <div data-include="components/header.html"></div>
+
+    <main>
+        <h2>Products</h2>
+
+        <section>
+            <h3>Our Selection</h3>
+
+            <img
+                src="images/products.png"
+                alt="JC displaying cigars, tobacco products, and accessories inside the Jazzy Cougar shop">
+
+            <p>
+                Every Jazzy Cougar product is selected for its character,
+                construction, and presentation. From hand-rolled house cigarettes
+                to carefully packed cigar boxes, our collection offers something
+                for quiet evenings, special occasions, and customers who simply
+                refuse to settle for an ugly lighter.
+            </p>
+
+            <p>
+                Choose a product below to view its price and description. You can
+                then select a tobacco shop and check whether your requested
+                quantity is currently available.
+            </p>
+        </section>
+
+        <!--
+            These classes and IDs create the interactive product selector.
+            JavaScript uses them to display product information and check
+            inventory at the selected tobacco shop.
+        -->
+        <section class="product-shop">
+            <h3>Browse Our Products</h3>
+
+            <label for="product-select">
+                <strong>Choose a product:</strong>
+            </label>
+
+            <select id="product-select" class="product-select">
+                <option value="">Select a product</option>
+
+                <optgroup label="Hand-Rolled Cigarettes">
+                    <option value="house-blend">
+                        House Blend — $14 per pack
+                    </option>
+                    <option value="golden-hour">
+                        Golden Hour — $16 per pack
+                    </option>
+                    <option value="after-hours">
+                        After Hours — $17 per pack
+                    </option>
+                </optgroup>
+
+                <optgroup label="Cigars and Boxes">
+                    <option value="house-reserve">
+                        House Reserve Cigar — $18 each
+                    </option>
+                    <option value="burgundy-box">
+                        Burgundy No. 5 Box — $220
+                    </option>
+                    <option value="private-box">
+                        JC's Private Box — $295
+                    </option>
+                </optgroup>
+
+                <optgroup label="Tobacco and Accessories">
+                    <option value="loose-blend">
+                        Loose House Blend — $22 per pouch
+                    </option>
+                    <option value="gold-lighter">
+                        Antique-Gold Lighter — $28
+                    </option>
+                    <option value="cigar-case">
+                        Leather Cigar Case — $36
+                    </option>
+                </optgroup>
+            </select>
+
+            <!--
+                This panel begins hidden and appears after a product is selected.
+                Its IDs allow JavaScript to replace the displayed information.
+            -->
+            <article id="product-panel" class="product-panel" hidden>
+                <h3 id="product-name">Product Name</h3>
+
+                <p id="product-price" class="product-price">
+                    Product price
+                </p>
+
+                <p id="product-description">
+                    Product description
+                </p>
+
+                <div class="stock-controls">
+                    <label for="product-quantity">
+                        <strong>Quantity:</strong>
+                    </label>
+
+                    <input
+                        id="product-quantity"
+                        type="number"
+                        min="1"
+                        max="20"
+                        value="1">
+
+                    <label for="shop-select">
+                        <strong>Tobacco shop:</strong>
+                    </label>
+
+                    <select id="shop-select">
+                        <option value="shop-one">Tobacco Shop 1</option>
+                        <option value="shop-two">Tobacco Shop 2</option>
+                        <option value="shop-three">Tobacco Shop 3</option>
+                    </select>
+
+                    <button id="stock-button" type="button">
+                        Check Stock
+                    </button>
+                </div>
+
+                <p
+                    id="stock-result"
+                    class="stock-result"
+                    aria-live="polite"></p>
+            </article>
+        </section>
+    </main>
+
+    <!-- This div is required as the placeholder for the shared footer component. -->
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/products.js"></script>
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="https://divonbriesen.github.io/web123/scripts/standards-check.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jazzy Cougar | Find Your Blend</title>
+    <link rel="icon" href="images/JazzyCougar.png" type="image/png">
+    <link rel="stylesheet" href="styles/default.css">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- This div is required as the placeholder for the shared header component. -->
+    <div data-include="components/header.html"></div>
+
+    <main>
+        <h2>Find Your Blend</h2>
+
+        <section>
+            <h3>A Recommendation from JC</h3>
+
+            <img
+                src="images/blend.png"
+                alt="JC offering a recommended tobacco selection across the shop counter">
+
+            <p>
+                Finding the right tobacco product should not require guessing.
+                Tell JC what strength, format, and occasion you have in mind, and
+                he will match your preferences with a selection from the Jazzy
+                Cougar catalog.
+            </p>
+
+            <p>
+                This recommendation tool is intended to help you explore our
+                collection. Select one answer for each question, then ask JC to
+                find the blend that best matches your preferences.
+            </p>
+        </section>
+
+        <!--
+            These classes and IDs create the interactive recommendation tool.
+            JavaScript reads the three selected preferences and displays the
+            matching product inside the hidden recommendation panel.
+        -->
+        <section class="blend-finder">
+            <h3>Tell Us What You Prefer</h3>
+
+            <label for="strength-select">
+                <strong>Preferred strength:</strong>
+            </label>
+
+            <select id="strength-select">
+                <option value="">Select a strength</option>
+                <option value="mild">Mild</option>
+                <option value="medium">Medium</option>
+                <option value="bold">Bold</option>
+            </select>
+
+            <label for="format-select">
+                <strong>Preferred format:</strong>
+            </label>
+
+            <select id="format-select">
+                <option value="">Select a format</option>
+                <option value="cigarette">Cigarette</option>
+                <option value="cigar">Cigar</option>
+                <option value="loose">Loose Tobacco</option>
+            </select>
+
+            <label for="occasion-select">
+                <strong>Occasion:</strong>
+            </label>
+
+            <select id="occasion-select">
+                <option value="">Select an occasion</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+                <option value="special">Special Occasion</option>
+            </select>
+
+            <button id="recommendation-button" type="button">
+                Find My Blend
+            </button>
+
+            <p
+                id="recommendation-error"
+                class="recommendation-error"
+                aria-live="polite"></p>
+
+            <article
+                id="recommendation-panel"
+                class="recommendation-panel"
+                aria-live="polite"
+                hidden>
+
+                <h3 id="recommendation-name">Recommended Product</h3>
+
+                <p id="recommendation-description">
+                    Product description
+                </p>
+
+                <p>
+                    <strong>Why JC recommends it:</strong>
+                    <span id="recommendation-reason">
+                        Recommendation reason
+                    </span>
+                </p>
+
+                <p>
+                    Visit our
+                    <a href="products.html">Products page</a>
+                    to check current availability.
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <!-- This div is required as the placeholder for the shared footer component. -->
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/find-your-blend.js"></script>
+    <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="https://divonbriesen.github.io/web123/scripts/standards-check.js" defer></script>
+</body>
+</html>
