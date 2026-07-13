@@ -45,6 +45,15 @@ h3 {
     text-align: center;
 }
 
+/* The introduction display name is intentionally prominent and kept on one line. */
+.display-name {
+    color: #75d394;
+    font-size: 1.35rem;
+    margin: 1rem 0;
+    text-align: center;
+    white-space: nowrap;
+}
+
 p {
     color: #edf5ee;
 }
@@ -276,6 +285,13 @@ pre {
     margin-top: 20px;
 }
 
+.quote .attribution {
+    background: none;
+    border: 0;
+    margin: 0.5rem 0 0;
+    padding: 0;
+}
+
 .attribution {
     text-align: center;
     color: #c7d6ca;
@@ -297,6 +313,10 @@ pre {
     nav a {
         display: block;
         margin: 6px auto;
+    }
+
+    .display-name {
+        font-size: 1rem;
     }
 }
 
