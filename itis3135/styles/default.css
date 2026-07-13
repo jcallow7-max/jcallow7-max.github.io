@@ -46,7 +46,7 @@ h3 {
 }
 
 /* The introduction display name is intentionally prominent and kept on one line. */
-.display-name {
+h6 {
     color: #75d394;
     font-size: 1.35rem;
     margin: 1rem 0;
