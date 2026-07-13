@@ -26,9 +26,9 @@ header {
 }
 
 .header-image {
-    width: 1.25em;
-    height: 1.25em;
-    max-width: 1.25em;
+    inline-size: 1.25em;
+    block-size: 1.25em;
+    max-inline-size: 1.25em;
     object-fit: cover;
     border: none;
     border-radius: 50%;
@@ -123,14 +123,14 @@ figure {
 
 img {
     max-width: 100%;
-    height: auto;
+    block-size: auto;
     border: 3px solid #3f9c65;
     border-radius: 12px;
 }
 
 .card-image {
-    width: 120px;
-    height: 120px;
+    inline-size: 120px;
+    block-size: 120px;
     object-fit: cover;
     display: block;
     margin: 10px auto;

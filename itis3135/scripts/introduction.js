@@ -1,45 +1,261 @@
-document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("intro-form");
-    const formSection = document.getElementById("form-section");
-    const resultSection = document.getElementById("result-section");
     const coursesContainer = document.getElementById("courses-container");
-    const addCourseButton = document.getElementById("add-course");
-    const clearButton = document.getElementById("clear-form");
-    const pictureInput = document.getElementById("picture");
-    const defaultPicture = "images3135/bld.png";
+    const resultSection = document.getElementById("result-section");
+    const outputSection = document.getElementById("code-output-section");
 
     const getValue = (id) => document.getElementById(id).value.trim();
 
-    const escapeHTML = (text) => String(text).replace(/[&<>"']/g, (char) => ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#039;"
-    }[char]));
-
-    function getPictureSource(callback) {
-        const file = pictureInput.files[0];
-
-        if (!file) {
-            callback(defaultPicture);
-            return;
-        }
-
-        const reader = new FileReader();
-
-        reader.onload = () => {
-            callback(reader.result);
-        };
-
-        reader.readAsDataURL(file);
+    function escapeHTML(value) {
+        return String(value).replace(/[&<>"']/g, (character) => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            "\"": "&quot;",
+            "'": "&#39;"
+        }[character]));
     }
 
-    addCourseButton.addEventListener("click", () => {
-        const newCourse = document.createElement("div");
-        newCourse.className = "course-entry";
+    function escapeXML(value) {
+        return String(value).replace(/[&<>"']/g, (character) => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            "\"": "&quot;",
+            "'": "&apos;"
+        }[character]));
+    }
 
-        newCourse.innerHTML = `
+    function getPictureName() {
+        const pictureInput = document.getElementById("picture");
+
+        if (pictureInput.files && pictureInput.files.length > 0) {
+            return pictureInput.files[0].name;
+        }
+
+        return "No picture selected";
+    }
+
+    function collectCourses() {
+        const courseEntries = document.querySelectorAll(".course-entry");
+        const courses = [];
+
+        courseEntries.forEach((entry) => {
+            const department = entry.querySelector(".course-department").value.trim();
+            const number = entry.querySelector(".course-number").value.trim();
+            const name = entry.querySelector(".course-name").value.trim();
+            const reason = entry.querySelector(".course-reason").value.trim();
+
+            courses.push({
+                department,
+                number,
+                name,
+                reason
+            });
+        });
+
+        return courses;
+    }
+
+    function collectLinks() {
+        return [
+            {
+                name: getValue("link-one-name"),
+                url: getValue("link-one-url")
+            },
+            {
+                name: getValue("link-two-name"),
+                url: getValue("link-two-url")
+            },
+            {
+                name: getValue("link-three-name"),
+                url: getValue("link-three-url")
+            },
+            {
+                name: getValue("link-four-name"),
+                url: getValue("link-four-url")
+            },
+            {
+                name: getValue("link-five-name"),
+                url: getValue("link-five-url")
+            }
+        ].filter((link) => link.name !== "" || link.url !== "");
+    }
+
+    function collectFormData() {
+        return {
+            firstName: getValue("first-name"),
+            middleName: getValue("middle-name"),
+            lastName: getValue("last-name"),
+            nickname: getValue("nickname"),
+            acknowledgment: getValue("acknowledgment"),
+            acknowledgmentDate: getValue("acknowledgment-date"),
+            mascotAdjective: getValue("mascot-adjective"),
+            mascotAnimal: getValue("mascot-animal"),
+            divider: getValue("divider"),
+            picture: getPictureName(),
+            pictureCaption: getValue("picture-caption"),
+            personalStatement: getValue("personal-statement"),
+            personalBackground: getValue("personal-background"),
+            professionalBackground: getValue("professional-background"),
+            academicBackground: getValue("academic-background"),
+            subjectBackground: getValue("subject-background"),
+            platform: getValue("platform"),
+            courses: collectCourses(),
+            quote: getValue("quote"),
+            quoteAuthor: getValue("quote-author"),
+            funnyThing: getValue("funny-thing"),
+            share: getValue("share"),
+            links: collectLinks()
+        };
+    }
+
+    function getFullName(data) {
+        return [data.firstName, data.middleName, data.lastName].filter(Boolean).join(" ");
+    }
+
+    function getDisplayName(data) {
+        return `${getFullName(data)} ${data.divider} ${data.nickname}`;
+    }
+
+    function buildCourseListHTML(courses) {
+        return courses.map((course) => `
+            <li>
+                <strong>${escapeHTML(course.department)} ${escapeHTML(course.number)} - ${escapeHTML(course.name)}:</strong>
+                ${escapeHTML(course.reason)}
+            </li>`).join("");
+    }
+
+    function buildLinksHTML(links) {
+        return links.map((link) => {
+            if (link.url === "") {
+                return escapeHTML(link.name);
+            }
+
+            return `<a href="${escapeHTML(link.url)}">${escapeHTML(link.name)}</a>`;
+        }).join(" | ");
+    }
+
+    function buildIntroductionHTML(data) {
+        return `<section>
+    <h3>${escapeHTML(getDisplayName(data))}</h3>
+
+    <p><em>${escapeHTML(data.acknowledgment)} - ${escapeHTML(data.acknowledgmentDate)}</em></p>
+
+    <figure>
+        <figcaption>${escapeHTML(data.pictureCaption)}</figcaption>
+    </figure>
+
+    <p>${escapeHTML(data.personalStatement)}</p>
+
+    <ul>
+        <li><strong>Personal Background:</strong> ${escapeHTML(data.personalBackground)}</li>
+        <li><strong>Professional Background:</strong> ${escapeHTML(data.professionalBackground)}</li>
+        <li><strong>Academic Background:</strong> ${escapeHTML(data.academicBackground)}</li>
+        <li><strong>Background in this Subject:</strong> ${escapeHTML(data.subjectBackground)}</li>
+        <li><strong>Primary Computer Platform:</strong> ${escapeHTML(data.platform)}</li>
+        <li><strong>Courses I'm Taking &amp; Why:</strong>
+            <ul>${buildCourseListHTML(data.courses)}
+            </ul>
+        </li>
+        <li><strong>Funny/Interesting Item to Remember Me By:</strong> ${escapeHTML(data.funnyThing)}</li>
+        <li><strong>I'd Also Like to Share:</strong> ${escapeHTML(data.share)}</li>
+    </ul>
+
+    <p class="quote">"${escapeHTML(data.quote)}"</p>
+    <p class="attribution">— ${escapeHTML(data.quoteAuthor)}</p>
+
+    <p>${buildLinksHTML(data.links)}</p>
+</section>`;
+    }
+
+    function buildJSON(data) {
+        return JSON.stringify(data, null, 4);
+    }
+
+    function buildXML(data) {
+        const courseXML = data.courses.map((course) => `        <course>
+            <department>${escapeXML(course.department)}</department>
+            <number>${escapeXML(course.number)}</number>
+            <name>${escapeXML(course.name)}</name>
+            <reason>${escapeXML(course.reason)}</reason>
+        </course>`).join("\n");
+
+        const linkXML = data.links.map((link) => `        <link>
+            <name>${escapeXML(link.name)}</name>
+            <url>${escapeXML(link.url)}</url>
+        </link>`).join("\n");
+
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<introduction>
+    <name>
+        <first>${escapeXML(data.firstName)}</first>
+        <middle>${escapeXML(data.middleName)}</middle>
+        <last>${escapeXML(data.lastName)}</last>
+        <nickname>${escapeXML(data.nickname)}</nickname>
+    </name>
+    <acknowledgment>${escapeXML(data.acknowledgment)}</acknowledgment>
+    <acknowledgmentDate>${escapeXML(data.acknowledgmentDate)}</acknowledgmentDate>
+    <mascot>
+        <adjective>${escapeXML(data.mascotAdjective)}</adjective>
+        <animal>${escapeXML(data.mascotAnimal)}</animal>
+    </mascot>
+    <divider>${escapeXML(data.divider)}</divider>
+    <picture>${escapeXML(data.picture)}</picture>
+    <pictureCaption>${escapeXML(data.pictureCaption)}</pictureCaption>
+    <personalStatement>${escapeXML(data.personalStatement)}</personalStatement>
+    <personalBackground>${escapeXML(data.personalBackground)}</personalBackground>
+    <professionalBackground>${escapeXML(data.professionalBackground)}</professionalBackground>
+    <academicBackground>${escapeXML(data.academicBackground)}</academicBackground>
+    <subjectBackground>${escapeXML(data.subjectBackground)}</subjectBackground>
+    <platform>${escapeXML(data.platform)}</platform>
+    <courses>
+${courseXML}
+    </courses>
+    <quote>${escapeXML(data.quote)}</quote>
+    <quoteAuthor>${escapeXML(data.quoteAuthor)}</quoteAuthor>
+    <funnyThing>${escapeXML(data.funnyThing)}</funnyThing>
+    <share>${escapeXML(data.share)}</share>
+    <links>
+${linkXML}
+    </links>
+</introduction>`;
+    }
+
+    function showCodeOutput(label, content) {
+        let outputArticle = document.getElementById("generated-code-output");
+
+        if (!outputArticle) {
+            outputArticle = document.createElement("article");
+            outputArticle.id = "generated-code-output";
+            outputSection.appendChild(outputArticle);
+        }
+
+        outputArticle.innerHTML = "";
+
+        const heading = document.createElement("h4");
+        heading.textContent = label;
+
+        const textArea = document.createElement("textarea");
+        textArea.value = content;
+        textArea.rows = 24;
+        textArea.cols = 80;
+        textArea.readOnly = true;
+
+        outputArticle.appendChild(heading);
+        outputArticle.appendChild(textArea);
+    }
+
+    function renderIntroduction(event) {
+        event.preventDefault();
+        const data = collectFormData();
+        resultSection.innerHTML = buildIntroductionHTML(data);
+    }
+
+    function addCourse() {
+        const courseEntry = document.createElement("div");
+        courseEntry.className = "course-entry";
+
+        courseEntry.innerHTML = `
             <label>Department:</label>
             <input type="text" class="course-department" placeholder="Example: ITIS" required>
 
@@ -55,174 +271,39 @@ document.addEventListener("DOMContentLoaded", () => {
             <button type="button" class="delete-course">Delete Course</button>
         `;
 
-        coursesContainer.appendChild(newCourse);
-    });
+        coursesContainer.appendChild(courseEntry);
+    }
 
-    coursesContainer.addEventListener("click", (event) => {
+    function deleteCourse(event) {
         if (event.target.classList.contains("delete-course")) {
-            const courseEntry = event.target.closest(".course-entry");
-            courseEntry.remove();
+            event.target.parentElement.remove();
         }
-    });
-
-    clearButton.addEventListener("click", () => {
-        form.querySelectorAll("input, textarea").forEach((field) => {
-            field.value = "";
-        });
-
-        pictureInput.value = "";
-    });
-
-    form.addEventListener("reset", () => {
-        setTimeout(() => {
-            pictureInput.value = "";
-            resultSection.innerHTML = "";
-            formSection.style.display = "block";
-        }, 0);
-    });
-
-    function getCoursesHTML() {
-        const courses = document.querySelectorAll(".course-entry");
-
-        return Array.from(courses).map((course) => {
-            const department = escapeHTML(course.querySelector(".course-department").value.trim());
-            const number = escapeHTML(course.querySelector(".course-number").value.trim());
-            const name = escapeHTML(course.querySelector(".course-name").value.trim());
-            const reason = escapeHTML(course.querySelector(".course-reason").value.trim());
-
-            return `
-                <li>
-                    <strong>${department} ${number} - ${name}:</strong>
-                    ${reason}
-                </li>
-            `;
-        }).join("");
     }
 
-    function getLinksHTML() {
-        const divider = escapeHTML(getValue("divider"));
+    function clearForm() {
+        form.reset();
+        resultSection.innerHTML = "";
+        const outputArticle = document.getElementById("generated-code-output");
 
-        const linkData = [
-            ["link-one-name", "link-one-url"],
-            ["link-two-name", "link-two-url"],
-            ["link-three-name", "link-three-url"],
-            ["link-four-name", "link-four-url"],
-            ["link-five-name", "link-five-url"]
-        ];
-
-        return linkData.map(([nameId, urlId]) => {
-            const name = escapeHTML(getValue(nameId));
-            const url = escapeHTML(getValue(urlId));
-
-            if (!name || !url) {
-                return "";
-            }
-
-            return `<a href="${url}">${name}</a>`;
-        }).filter(Boolean).join(` ${divider} `);
+        if (outputArticle) {
+            outputArticle.remove();
+        }
     }
 
-    function optionalListItem(label, value) {
-        if (!value.trim()) {
-            return "";
-        }
+    form.addEventListener("submit", renderIntroduction);
+    document.getElementById("add-course").addEventListener("click", addCourse);
+    document.getElementById("clear-form").addEventListener("click", clearForm);
+    coursesContainer.addEventListener("click", deleteCourse);
 
-        return `
-            <li>
-                <strong>${label}:</strong>
-                ${escapeHTML(value)}
-            </li>
-        `;
-    }
-
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        if (!form.checkValidity()) {
-            form.reportValidity();
-            return;
-        }
-
-        getPictureSource((pictureSource) => {
-            const firstName = escapeHTML(getValue("first-name"));
-            const middleName = escapeHTML(getValue("middle-name"));
-            const lastName = escapeHTML(getValue("last-name"));
-            const fullName = `${firstName} ${middleName} ${lastName}`.replace(/\s+/g, " ").trim();
-
-            resultSection.innerHTML = `
-                <h2>Introduction Form</h2>
-
-                <h3>${fullName}</h3>
-
-                <figure>
-                    <img src="${pictureSource}" alt="${fullName}">
-                    <figcaption>${escapeHTML(getValue("picture-caption"))}</figcaption>
-                </figure>
-
-                <ul>
-                    <li>
-                        <strong>Personal Background:</strong>
-                        ${escapeHTML(getValue("personal-background"))}
-                    </li>
-
-                    <li>
-                        <strong>Professional Background:</strong>
-                        ${escapeHTML(getValue("professional-background"))}
-                    </li>
-
-                    <li>
-                        <strong>Academic Background:</strong>
-                        ${escapeHTML(getValue("academic-background"))}
-                    </li>
-
-                    <li>
-                        <strong>Background in this Subject:</strong>
-                        ${escapeHTML(getValue("subject-background"))}
-                    </li>
-
-                    <li>
-                        <strong>Primary Computer Platform:</strong>
-                        ${escapeHTML(getValue("platform"))}
-                    </li>
-
-                    <li>
-                        <strong>Courses I'm Taking &amp; Why:</strong>
-
-                        <ul>
-                            ${getCoursesHTML()}
-                        </ul>
-                    </li>
-
-                    ${optionalListItem("Funny/Interesting Item to Remember Me By", getValue("funny-thing"))}
-
-                    <li>
-                        <strong>Graduating:</strong>
-                        Fall 2026.
-                    </li>
-
-                    <li>
-                        <strong>From North Carolina?:</strong>
-                        No. I am originally from Philadelphia, Pennsylvania.
-                    </li>
-
-                    ${optionalListItem("I'd Also Like to Share", getValue("share"))}
-
-                    <li>
-                        <strong>Favorite Quote:</strong>
-                        "${escapeHTML(getValue("quote"))}"
-                        <em>— ${escapeHTML(getValue("quote-author"))}</em>
-                    </li>
-                </ul>
-
-                <p>${getLinksHTML()}</p>
-
-                <p>
-                    <a href="introduction_form.html">Reset Form</a>
-                </p>
-            `;
-
-            formSection.style.display = "none";
-            resultSection.scrollIntoView();
-        });
+    document.getElementById("generate-html").addEventListener("click", () => {
+        showCodeOutput("Generated HTML", buildIntroductionHTML(collectFormData()));
     });
-});
+
+    document.getElementById("generate-json").addEventListener("click", () => {
+        showCodeOutput("Generated JSON", buildJSON(collectFormData()));
+    });
+
+    document.getElementById("generate-xml").addEventListener("click", () => {
+        showCodeOutput("Generated XML", buildXML(collectFormData()));
+    });
+

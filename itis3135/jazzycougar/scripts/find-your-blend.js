@@ -37,31 +37,24 @@ const blendProducts = [
             + "overpowering."
     },
     {
-        name: "Burgundy No. 5",
+        name: "Burgundy No. 5 Box",
         strength: "bold",
         format: "cigar",
         occasions: ["evening", "special"],
-        description: "A full-bodied cigar with a deep and refined character.",
-        reason: "Its bold profile and polished presentation make it ideal for "
-            + "evenings and celebrations."
+        description: "Ten full-bodied Burgundy No. 5 cigars arranged inside "
+            + "a burgundy-and-gold wooden keepsake box.",
+        reason: "Its bold profile and polished presentation make it ideal "
+            + "for evenings and celebrations."
     },
     {
-        name: "JC's Private Selection",
+        name: "JC's Private Box",
         strength: "bold",
         format: "cigar",
         occasions: ["special"],
-        description: "A premium cigar selected for exceptional occasions.",
+        description: "Ten premium cigars selected by JC and presented inside "
+            + "an espresso-stained wooden box with antique-gold hardware.",
         reason: "It is reserved for customers looking for JC's most distinctive "
-            + "and carefully chosen cigar."
-    },
-    {
-        name: "Mellow Leaf",
-        strength: "mild",
-        format: "loose",
-        occasions: ["afternoon"],
-        description: "A gentle loose-leaf tobacco with a soft aromatic finish.",
-        reason: "Its mild character makes it especially suited to an unhurried "
-            + "afternoon."
+            + "and carefully chosen cigar collection."
     },
     {
         name: "Loose House Blend",
@@ -71,15 +64,6 @@ const blendProducts = [
         description: "Jazzy Cougar's balanced signature loose-tobacco blend.",
         reason: "Its flexible medium profile works well across different times "
             + "and preferences."
-    },
-    {
-        name: "Midnight Cut",
-        strength: "bold",
-        format: "loose",
-        occasions: ["evening", "special"],
-        description: "A dark loose-leaf blend with a rich and lasting finish.",
-        reason: "Its deeper character is designed for experienced customers and "
-            + "later occasions."
     }
 ];
 
@@ -107,7 +91,7 @@ function findBestBlend(strength, format, occasion) {
         }
 
         if (product.format === format) {
-            score += 3;
+            score += 5;
         }
 
         if (product.occasions.includes(occasion)) {

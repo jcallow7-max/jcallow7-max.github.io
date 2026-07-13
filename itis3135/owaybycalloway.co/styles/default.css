@@ -1,0 +1,96 @@
+        body {
+            background-color: #0b132b; /* Dark blue brand background used instead of plain black. */
+            color: #f4ead2;
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            max-width: 1050px;
+            width: 90%;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        header {
+            text-align: center;
+            padding: 14px 0 10px;
+        }
+
+        header img {
+            width: 80px;
+            height: 80px;
+            vertical-align: middle;
+            margin-right: 14px;
+        }
+
+        h1 {
+            color: #5bc0be;
+            display: inline;
+            font-family: Verdana, "Trebuchet MS", sans-serif;
+            font-size: 2.6rem;
+        }
+
+        header p {
+            color: #d9cfae;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        main {
+            background-color: #1c2541;
+            border: 2px solid #3a506b;
+            border-radius: 15px;
+            padding: 24px;
+        }
+
+        h2 {
+            color: #5bc0be;
+            font-family: Verdana, "Trebuchet MS", sans-serif;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #5bc0be;
+            font-family: Verdana, "Trebuchet MS", sans-serif;
+            margin-top: 28px;
+        }
+
+        p,
+        li {
+            color: #f4ead2;
+        }
+
+        ul {
+            list-style-type: "✦ ";
+            padding-left: 28px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        section {
+            background-color: #3a506b;
+            border-left: 6px solid #5bc0be;
+            padding: 6px 18px 14px;
+            margin-top: 22px;
+            border-radius: 8px;
+        }
+
+        a,
+        a:visited {
+            color: #5bc0be;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #d9cfae;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            color: #d9cfae;
+            margin-top: 22px;
+            padding-bottom: 18px;
+        }
+

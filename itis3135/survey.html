@@ -2,40 +2,16 @@
 
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Jackson Calloway's Jazzy Cougar | ITIS3135 | Jazzy Cougar Creative Tech Hub Survey</title>
 
-<link href="images/baldi.png" rel="icon" type="image/png"/><link href="styles/default.css" rel="stylesheet"/>
+<link href="images/baldi.png" rel="icon" type="image/png"><link href="styles/default.css" rel="stylesheet">
 
 <script crossorigin="anonymous" src="https://lint.page/kit/4d0fe3.js"></script></head>
-<body><header>
-<h1 class="site-title">
-<img alt="Jackson Calloway" class="header-image" src="images/bld.png"/>
-        Jackson Calloway's Jazzy Cougar | ITIS3135
-    </h1>
-<p><em>ITIS 3135 Course Site</em></p>
-<nav>
-<a href="index.html">Home</a> |
-        <a href="contract.html">Contract</a> |
-        <a href="survey.html">Survey</a> |
-        <a href="cards.html">Cards</a> |
-        <a href="inventory.html">Inventory</a> |
-        <a href="documentation.html">Documentation</a> |
-        <a href="product.html">Product</a> |
-        <a href="gallery.html">Gallery</a> |
-        <a href="instructions.html">Instructions</a> |
-        <a href="highlight.html">Highlight</a> |
-        <a href="introduction.html">Introduction</a> |
-        <a href="about.html">About</a> |
-        <a href="website_evaluations.html">Website Evaluations</a> |
-        <a href="introduction_form.html">Introduction Form</a>
-</nav>
-<nav class="secondary-nav">
-<a href="stuff/the-upstairs-news.html">CRAPpy Page</a> |
-        <a href="hobby/index.html">Hobby</a>
-</nav>
-</header>
+<body>
+<!-- This div is required as the placeholder for the shared header component. -->
+<div data-include="components/header.html"></div>
 
 <main>
 <h2>Jazzy Cougar Creative Tech Hub Survey</h2>
@@ -48,9 +24,9 @@
 <fieldset>
 <legend>Basic Information</legend>
 <label for="name">Name:</label>
-<input id="name" name="name" placeholder="Enter your name" required="" type="text"/>
+<input id="name" name="name" placeholder="Enter your name" required="" type="text">
 <label for="email">Email:</label>
-<input id="email" name="email" placeholder="Enter your email" required="" type="email"/>
+<input id="email" name="email" placeholder="Enter your email" required="" type="email">
 <label for="age-range">Age Range:</label>
 <select id="age-range" name="age-range" required="">
 <option value="">Select one</option>
@@ -63,33 +39,33 @@
 <fieldset>
 <legend>Creative Interests</legend>
 <p>Which areas interest you?</p>
-<input id="coding" name="interests" type="checkbox" value="coding"/>
+<input id="coding" name="interests" type="checkbox" value="coding">
 <label for="coding">Coding and web design</label>
-<input id="music" name="interests" type="checkbox" value="music"/>
+<input id="music" name="interests" type="checkbox" value="music">
 <label for="music">Music production</label>
-<input id="fitness" name="interests" type="checkbox" value="fitness"/>
+<input id="fitness" name="interests" type="checkbox" value="fitness">
 <label for="fitness">Fitness and discipline</label>
-<input id="business" name="interests" type="checkbox" value="business"/>
+<input id="business" name="interests" type="checkbox" value="business">
 <label for="business">Tech business ideas</label>
 </fieldset>
 <fieldset>
 <legend>Hub Experience</legend>
 <p>Which area would you visit first?</p>
-<input id="code-lab" name="first-area" required="" type="radio" value="code-lab"/>
+<input id="code-lab" name="first-area" required="" type="radio" value="code-lab">
 <label for="code-lab">Code Lab</label>
-<input id="studio" name="first-area" type="radio" value="studio"/>
+<input id="studio" name="first-area" type="radio" value="studio">
 <label for="studio">Music Studio</label>
-<input id="training-zone" name="first-area" type="radio" value="training-zone"/>
+<input id="training-zone" name="first-area" type="radio" value="training-zone">
 <label for="training-zone">Training Zone</label>
-<input id="startup-corner" name="first-area" type="radio" value="startup-corner"/>
+<input id="startup-corner" name="first-area" type="radio" value="startup-corner">
 <label for="startup-corner">Startup Corner</label>
 <label for="comments">
                     What would you want the hub to include?
                 </label>
 <textarea id="comments" name="comments" placeholder="Share your ideas here" rows="5"></textarea>
 </fieldset>
-<input type="submit" value="Submit Survey"/>
-<input type="reset" value="Reset Form"/>
+<input type="submit" value="Submit Survey">
+<input type="reset" value="Reset Form">
 </form>
 </main>
 
@@ -99,3 +75,4 @@
 <script src="scripts/HTMLInclude.min.js"></script>
 <script src="https://divonbriesen.github.io/web123/scripts/standards-check.js" defer></script></body>
 </html>
+
